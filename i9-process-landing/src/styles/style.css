@@ -1,0 +1,250 @@
+/* src/styles/style.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #1f2937; /* text-gray-900 */
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s;
+  background: transparent;
+}
+
+header.scrolled {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb; /* azul */
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #374151; /* gray-700 */
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #2563eb;
+}
+
+nav a.button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+
+nav a.button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Hero */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  color: #4b5563; /* gray-600 */
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
+}
+
+#hero a {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+#hero a:hover {
+  background-color: #1d4ed8;
+}
+
+/* Sections comuns */
+section {
+  padding: 5rem 1.5rem;
+}
+
+section h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+  text-align: center; /* já estava centralizado, mas reforçado */
+}
+
+section p {
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media(min-width: 640px) {
+  .sm-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 768px) {
+  .md-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Modulos e Consultorias / Fluxos cards */
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #eff6ff;
+}
+
+.card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 0.5rem;
+}
+
+.card p {
+  color: #6b7280;
+  text-align: left; /* novo */
+}
+
+/* Grupo i9 */
+#grupo {
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
+}
+
+#grupo h3 {
+  color: white;
+}
+
+#grupo p {
+  color: #dbeafe;
+}
+
+#grupo a {
+  background-color: white;
+  color: #2563eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+#grupo a:hover {
+  background-color: #dbeafe;
+}
+
+/* Contato */
+#contato input, #contato textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+#contato textarea {
+  height: 8rem;
+}
+
+#contato button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+#contato button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: #dbeafe;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.875rem;
+}
