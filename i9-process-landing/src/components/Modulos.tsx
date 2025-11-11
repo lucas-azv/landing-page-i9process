@@ -16,41 +16,11 @@ import imgProjetos from "../assets/img/projetos_image.jpg";
 import imgCRM from "../assets/img/crm_image.jpg";
 
 const modulos = [
-  {
-    nome: "Financeiro",
-    icon: iconFinanceiro,
-    imagem: imgFinanceiro,
-    descricao: "Controle completo de receitas, despesas e fluxo de caixa.",
-    cor: "#2563eb",
-  },
-  {
-    nome: "Recursos Humanos",
-    icon: iconRH,
-    imagem: imgRH,
-    descricao: "Gestão de colaboradores, folhas de pagamento e desempenho.",
-    cor: "#16a34a",
-  },
-  {
-    nome: "Compras",
-    icon: iconCompras,
-    imagem: imgCompras,
-    descricao: "Gerencie pedidos, fornecedores e orçamentos com agilidade.",
-    cor: "#f59e0b",
-  },
-  {
-    nome: "Projetos",
-    icon: iconProjetos,
-    imagem: imgProjetos,
-    descricao: "Acompanhe tarefas, prazos e equipes em tempo real.",
-    cor: "#9333ea",
-  },
-  {
-    nome: "CRM",
-    icon: iconCRM,
-    imagem: imgCRM,
-    descricao: "Fortaleça o relacionamento com clientes e aumente as vendas.",
-    cor: "#dc2626",
-  },
+  { nome: "Financeiro", icon: iconFinanceiro, imagem: imgFinanceiro, descricao: "Controle completo de receitas, despesas e fluxo de caixa.", cor: "#2563eb" },
+  { nome: "Recursos Humanos", icon: iconRH, imagem: imgRH, descricao: "Gestão de colaboradores, folhas de pagamento e desempenho.", cor: "#16a34a" },
+  { nome: "Compras", icon: iconCompras, imagem: imgCompras, descricao: "Gerencie pedidos, fornecedores e orçamentos com agilidade.", cor: "#f59e0b" },
+  { nome: "Projetos", icon: iconProjetos, imagem: imgProjetos, descricao: "Acompanhe tarefas, prazos e equipes em tempo real.", cor: "#9333ea" },
+  { nome: "CRM", icon: iconCRM, imagem: imgCRM, descricao: "Fortaleça o relacionamento com clientes e aumente as vendas.", cor: "#dc2626" },
 ];
 
 const Modulos: React.FC = () => {
@@ -63,18 +33,16 @@ const Modulos: React.FC = () => {
 
       <div className="modulos-container">
         {modulos.map((modulo) => (
-          <div key={modulo.nome} className="module-card">
+          <div
+            key={modulo.nome}
+            className="module-card"
+            style={{ "--overlay-color": modulo.cor + "80" } as React.CSSProperties} // define a cor do overlay
+          >
             <div
               className="modulo-top"
-              style={{
-                backgroundImage: `url(${modulo.imagem})`,
-              }}
+              style={{ backgroundImage: `url(${modulo.imagem})` }}
             >
-              <div
-                className="overlay"
-                style={{ backgroundColor: modulo.cor }}
-              ></div>
-              <img src={modulo.icon} alt={modulo.nome} className="modulo-icon" />
+              <img src={modulo.icon} alt={modulo.nome} />
             </div>
 
             <div className="modulo-bottom">
