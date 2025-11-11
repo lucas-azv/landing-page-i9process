@@ -218,6 +218,8 @@ nav a.button:hover {
 }
 
 #hero a {
+  width: 20%;
+  margin: auto;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
   padding: 1rem 2.5rem;
@@ -359,7 +361,6 @@ section > p {
 
 #consultorias h3 {
   color: #f8fafc;
-  font-size: 1.8rem;
   margin-bottom: 0.8rem;
 }
 
@@ -367,7 +368,6 @@ section > p {
   color: #dbeafe;
   max-width: 700px;
   margin: 0 auto 2rem auto;
-  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -496,41 +496,83 @@ section > p {
 
 #modulos .modulos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
   justify-items: center;
   margin-top: 2.5rem;
 }
 
-#modulos .module-card {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
-  padding: 1.5rem 1rem;
+.module-card {
+  background: #f9fafb;
   border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   transition: all 0.3s ease;
-  cursor: pointer;
   width: 100%;
-  max-width: 240px;
+  max-width: 320px;
+  cursor: pointer;
 }
 
-#modulos .module-card:hover {
+.module-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-#modulos .module-card img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.5rem;
+/* Parte superior com imagem */
+.modulo-top {
+  position: relative;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#modulos .module-card h4 {
-  color: white;
-  font-size: 1.1rem;
+.modulo-top .overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+.modulo-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  filter: brightness(0) invert(1);
+  z-index: 2;
+}
+
+/* Parte inferior com texto */
+.modulo-bottom {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.modulo-bottom h4 {
+  color: #111827;
+  font-size: 1.2rem;
   font-weight: 600;
+  margin-bottom: 0.4rem;
 }
+
+.modulo-bottom p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #modulos .modulos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modulo-bottom {
+    text-align: center;
+  }
+}
+
 
 /* ============================================
    GRUPO I9
