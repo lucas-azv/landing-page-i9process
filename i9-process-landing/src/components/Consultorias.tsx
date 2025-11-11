@@ -1,23 +1,28 @@
 import React from "react";
 import "../styles/style.css";
-import checkIcon from "../assets/img/check_circle_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg";
+import routeIcon from "../assets/img/route_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg";
+import rocketIcon from "../assets/img/rocket_launch_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg";
+import analyticsIcon from "../assets/img/analytics_32dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.svg";
 
 const Consultorias: React.FC = () => {
   const cards = [
     {
       titulo: "Mapeamento de processos",
       descricao:
-        "Identificamos gargalos, padronizamos fluxos e otimizamos cada etapa para aumentar a eficiência operacional."
+        "Identificamos gargalos, padronizamos fluxos e otimizamos cada etapa para aumentar a eficiência operacional.",
+      icone: routeIcon,
     },
     {
       titulo: "Implantação assistida",
       descricao:
-        "Acompanhamos todo o processo de implementação garantindo aderência, capacitação e resultados consistentes."
+        "Acompanhamos todo o processo de implementação garantindo aderência, capacitação e resultados consistentes.",
+      icone: rocketIcon,
     },
     {
       titulo: "Análise de performance",
       descricao:
-        "Monitoramos indicadores-chave e sugerimos melhorias contínuas baseadas em dados reais de desempenho."
+        "Monitoramos indicadores-chave e sugerimos melhorias contínuas baseadas em dados reais de desempenho.",
+      icone: analyticsIcon,
     },
   ];
 
@@ -34,7 +39,7 @@ const Consultorias: React.FC = () => {
             {/* Ícone */}
             <div className="icone-wrapper">
               <div className="icone-fundo">
-                <img src={checkIcon} alt="check" className="icone" />
+                <img src={item.icone} alt={item.titulo} className="icone" />
               </div>
             </div>
 
