@@ -1,4 +1,7 @@
-/* src/styles/style.css - Estilização Moderna i9 Process */
+/* ============================================
+   FONTES
+============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap');
 
 /* ============================================
    RESET E BASE
@@ -9,16 +12,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --header-h: 72px;
+  --hero-offset: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: "Stack Sans Text", sans-serif;
   color: #111827;
   line-height: 1.6;
   overflow-x: hidden;
   background: linear-gradient(to bottom, #eff6ff, #ffffff);
 }
 
-html {
-  scroll-behavior: smooth;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Stack Sans Headline", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -27,32 +41,32 @@ a {
 }
 
 /* ============================================
-   NAVBAR - Moderno e Flutuante
+   NAVBAR
 ============================================ */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
+  height: var(--header-h);
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
+  transition: background .3s, box-shadow .3s, backdrop-filter .3s;
 }
 
 header.scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 nav {
   max-width: 1280px;
   margin: 0 auto;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 nav h1 {
@@ -136,39 +150,57 @@ nav a.button:hover {
 }
 
 /* ============================================
-   HERO SECTION - Impactante
+   HERO SECTION
 ============================================ */
-/* Hero Section - Corrigido */
 #hero {
-  width: 100vw; /* ocupa toda a largura da tela */
-  min-height: 100vh;
+  width: 100%;
+  min-height: calc(60vh - var(--header-h));
+  margin-top: var(--header-h);
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 8rem 2rem 4rem;
-  margin: 0;
+  padding: 4rem 2rem;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  scroll-margin-top: var(--header-h);
 }
 
 #hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 80%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-  animation: float 20s ease-in-out infinite;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 20%,
+    rgba(37, 99, 235, 0.12) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -30px) rotate(5deg); }
-  66% { transform: translate(-20px, 20px) rotate(-5deg); }
+#hero > * {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #hero h2 {
@@ -184,17 +216,6 @@ nav a.button:hover {
   animation: fadeInUp 0.8s ease;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 #hero p {
   color: #4b5563;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
@@ -208,47 +229,33 @@ nav a.button:hover {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
   animation: fadeInUp 0.8s ease 0.4s backwards;
 }
 
-#hero a.primary {
+#hero a {
+  width: 20%;
+  margin: auto;
+  display: inline-block;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 1.05rem;
+  text-align: center;
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.4s backwards;
 }
 
-#hero a.primary:hover {
+#hero a:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
 }
 
-#hero a.secondary {
-  background: white;
-  color: #2563eb;
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 1.05rem;
-  border: 2px solid #2563eb;
-  transition: all 0.3s;
-}
-
-#hero a.secondary:hover {
-  background: #eff6ff;
-  transform: translateY(-3px);
-}
-
 /* ============================================
-   SECTIONS - Espaçamento e Layout
+   SEÇÕES GERAIS
 ============================================ */
 section {
   width: 100%;
@@ -285,7 +292,7 @@ section > p {
 }
 
 /* ============================================
-   GRID SYSTEM
+   GRID
 ============================================ */
 .grid {
   display: grid;
@@ -306,7 +313,7 @@ section > p {
 }
 
 /* ============================================
-   CARDS - Modernos com Glassmorphism
+   CARDS
 ============================================ */
 .card {
   background: white;
@@ -366,7 +373,6 @@ section > p {
   font-weight: 700;
   color: #1e40af;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
 }
 
 .card p {
@@ -377,16 +383,7 @@ section > p {
 }
 
 /* ============================================
-   FLUXOS SECTION - Destaque
-============================================ */
-#fluxos {
-  background: white;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-}
-
-/* ============================================
-   CONSULTORIAS - Background Azul Gradiente
+   CONSULTORIAS
 ============================================ */
 #consultorias {
   background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
@@ -411,21 +408,13 @@ section > p {
   color: white;
 }
 
-#consultorias .card h4 {
-  color: white;
-}
-
-#consultorias .card p {
-  color: #dbeafe;
-}
-
 #consultorias .card:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
-   MÓDULOS - Cards Coloridos
+   MÓDULOS
 ============================================ */
 #modulos .grid {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -460,11 +449,6 @@ section > p {
   background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
-#modulos .module-card .icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 #modulos .module-card h4 {
   color: white;
   font-size: 1.5rem;
@@ -472,7 +456,7 @@ section > p {
 }
 
 /* ============================================
-   GRUPO i9 - Seção Especial
+   GRUPO I9
 ============================================ */
 #grupo {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
@@ -481,10 +465,6 @@ section > p {
   border-radius: 2rem;
   padding: 5rem 2rem;
   margin: 4rem auto;
-}
-
-#grupo h3 {
-  color: white;
 }
 
 #grupo p {
@@ -514,7 +494,7 @@ section > p {
 }
 
 /* ============================================
-   CONTATO - Formulário Moderno
+   CONTATO
 ============================================ */
 #contato {
   max-width: 600px;
@@ -576,10 +556,6 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer p {
-  margin: 0.5rem 0;
-}
-
 footer strong {
   color: white;
   font-weight: 700;
@@ -613,18 +589,4 @@ footer strong {
   .card {
     padding: 1.5rem;
   }
-}
-
-/* ============================================
-   UTILIDADES
-============================================ */
-.text-gradient {
-  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.shadow-glow {
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
 }
