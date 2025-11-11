@@ -616,8 +616,6 @@ section > p {
   }
 }
 
-
-
 /* ============================================
    GRUPO I9
 ============================================ */
@@ -625,8 +623,8 @@ section > p {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
   border-radius: 2rem;
-  padding: 1.5rem 2rem; /* antes: 5rem 2rem */
-  margin: 3rem auto; /* antes: 4rem auto */
+  padding: 3rem 2rem;
+  margin: 4rem auto;
 }
 
 .grupo-content {
@@ -639,21 +637,20 @@ section > p {
 
 .grupo-texto {
   flex: 1 1 50%;
-  text-align: left;
 }
 
 .grupo-texto h3 {
-  text-align: left;
   color: #60a5fa;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   margin-bottom: 1rem;
+  text-align: left; /* desktop: à esquerda */
 }
 
 .grupo-texto p {
   color: #d1d5db;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
-  max-width: 85%;
-  text-align: left;
 }
 
 .grupo-texto a {
@@ -686,6 +683,29 @@ section > p {
   object-fit: cover;
   border-radius: 1.5rem;
 }
+
+/* ===================== */
+/* Mobile: esconder imagem e centralizar conteúdo */
+@media (max-width: 768px) {
+  .grupo-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grupo-texto h3 {
+    text-align: center; /* mobile: título centralizado */
+  }
+
+  .grupo-imagem {
+    display: none; /* esconde imagem */
+  }
+
+  .grupo-texto {
+    flex: 1 1 100%;
+    text-align: center; /* centraliza texto e botão */
+  }
+}
+
 
 /* ============================================
    CONTATO
