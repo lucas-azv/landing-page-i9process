@@ -1,10 +1,20 @@
 import React from "react";
+import "../styles/style.css";
 
 const Fluxos: React.FC = () => {
-  const items = [
-    "Automação completa",
-    "Acompanhamento em tempo real",
-    "Integração entre módulos"
+  const cards = [
+    {
+      titulo: "Automação completa",
+      texto: "Elimine tarefas manuais e acelere decisões com fluxos 100% automatizados.",
+    },
+    {
+      titulo: "Acompanhamento em tempo real",
+      texto: "Monitore aprovações e status em tempo real, com alertas inteligentes.",
+    },
+    {
+      titulo: "Integração entre módulos",
+      texto: "Garanta consistência de dados conectando todos os setores da empresa.",
+    },
   ];
 
   return (
@@ -16,10 +26,10 @@ const Fluxos: React.FC = () => {
       </p>
 
       <div className="grid md-grid-3">
-        {items.map((item, index) => (
+        {cards.map((item, index) => (
           <div key={index} className="card">
-            <h4>{item}</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h4>{item.titulo}</h4>
+            <p>{item.texto}</p>
           </div>
         ))}
       </div>

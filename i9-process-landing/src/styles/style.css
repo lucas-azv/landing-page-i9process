@@ -7,6 +7,7 @@
    RESET E BASE
 ============================================ */
 * {
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -389,90 +390,203 @@ section > p {
   background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
   color: white;
   border-radius: 2rem;
-  margin: 4rem auto;
+  /* margin: 4rem auto; */
   padding: 6rem 3rem;
 }
 
 #consultorias h3 {
   color: white;
+  text-align: center;
 }
 
 #consultorias p {
   color: #dbeafe;
+  text-align: center;
+  /* margin-bottom: 3rem; */
 }
 
-#consultorias .card {
+.consultorias-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.consultorias-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+.card-consultoria {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-consultoria:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-consultoria .icone {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.card-consultoria h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
   color: white;
 }
 
-#consultorias .card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+.consultorias-imagem {
+  width: 50%;
+}
+
+.consultorias-imagem img {
+  width: 100%;
+  height: 320px; /* ajuste conforme desejar */
+  object-fit: cover; /* mantém o enquadramento sem distorcer */
+  border-radius: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .consultorias-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .consultorias-cards {
+    width: 100%;
+    align-items: center;
+  }
+
+  .consultorias-imagem {
+    width: 100%;
+  }
 }
 
 /* ============================================
    MÓDULOS
 ============================================ */
-#modulos .grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+#modulos {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 4rem 2rem;
 }
 
+/* Container fixo com grid para manter largura igual */
+#modulos .modulos-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas fixas */
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2.5rem;
+}
+
+/* Responsivo — quebra em menos colunas */
+@media (max-width: 1000px) {
+  #modulos .modulos-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #modulos .modulos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card */
 #modulos .module-card {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  padding: 2.5rem;
-  border-radius: 1.5rem;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
+  width: 100%;
+  max-width: 240px;
 }
 
 #modulos .module-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.4);
-}
-
-#modulos .module-card.green {
-  background: linear-gradient(135deg, #10b981, #059669);
-}
-
-#modulos .module-card.purple {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-}
-
-#modulos .module-card.orange {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
 }
 
 #modulos .module-card h4 {
   color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.6rem;
 }
 
+/* Ícones */
+#modulos .module-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+
 /* ============================================
-   GRUPO I9
+    GRUPO I9
 ============================================ */
 #grupo {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
-  text-align: center;
   border-radius: 2rem;
   padding: 5rem 2rem;
   margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#grupo p {
+.grupo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.grupo-texto {
+  flex: 0 0 60%;
+  text-align: left;
+}
+
+.grupo-texto h3 {
+  color: #60a5fa;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left !important; 
+}
+
+.grupo-texto p {
   color: #d1d5db;
   font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 85%;
+  /* CORREÇÃO DEFINITIVA: Força o parágrafo a alinhar à esquerda, anulando 'section > p' */
+  text-align: left !important; 
 }
 
-#grupo a {
+.grupo-texto a {
   background: white;
   color: #111827;
   padding: 1rem 2.5rem;
@@ -484,13 +598,110 @@ section > p {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
 
-#grupo a:hover {
+.grupo-texto a:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(255, 255, 255, 0.3);
   background: #f3f4f6;
+}
+
+.grupo-imagem {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grupo-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .grupo-content {
+    flex-direction: column;
+    /* Adicionado para garantir que os itens fiquem na esquerda */
+    align-items: flex-start;
+    padding: 0 1rem; 
+  }
+
+  .grupo-texto {
+    flex: unset;
+    text-align: left;
+    width: 100%;
+    padding: 0; /* Remove o padding extra aqui, já definido no .grupo-content */
+  }
+  
+  /* As regras com !important acima já devem garantir a correção, 
+     mas as mantemos aqui para especificidade: */
+  .grupo-texto h3 {
+    text-align: left !important; 
+  }
+  
+  .grupo-texto p {
+    text-align: left !important;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .grupo-imagem {
+    flex: unset;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .grupo-imagem img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* Responsividade */
+@media (max-width: 900px) {
+  .grupo-content {
+    flex-direction: column;
+  }
+
+  .grupo-texto {
+    flex: unset;
+    /* text-align: left; - Mantemos aqui para elementos de texto inline/bloco */
+    text-align: left;
+    width: 100%; /* Garante que o bloco use toda a largura disponível */
+    padding: 0 1rem; /* Adiciona um pequeno padding nas laterais em telas pequenas, se necessário */
+  }
+  
+  /* FORÇA o TÍTULO a alinhar à esquerda, anulando o 'section h3' global */
+  .grupo-texto h3 {
+    text-align: left; 
+  }
+  
+  /* FORÇA o PARÁGRAFO a alinhar à esquerda e remove a margem 'auto' horizontal, se houver conflito */
+  .grupo-texto p {
+    text-align: left; 
+    max-width: 100%; /* Garante que o parágrafo use a largura total do .grupo-texto */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Garante que o BOTÃO continue sendo um elemento inline-flex e alinhado pela regra 'text-align: left' do pai */
+  .grupo-texto a {
+    /* Não precisa de alteração, ele herda o text-align: left do .grupo-texto */
+  }
+
+  .grupo-imagem {
+    flex: unset;
+    width: 100%;
+    margin-top: 1.5rem; /* Adiciona um espaço acima da imagem */
+  }
+
+  .grupo-imagem img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* ============================================
