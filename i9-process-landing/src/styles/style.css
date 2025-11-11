@@ -1,6 +1,8 @@
-/* src/styles/style.css */
+/* src/styles/style.css - Estilização Moderna i9 Process */
 
-/* Reset básico */
+/* ============================================
+   RESET E BASE
+============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -8,145 +10,287 @@
 }
 
 body {
-  font-family: sans-serif;
-  color: #1f2937; /* text-gray-900 */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #111827;
   line-height: 1.6;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-/* Navbar */
+/* ============================================
+   NAVBAR - Moderno e Flutuante
+============================================ */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  transition: all 0.3s;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
 }
 
 header.scrolled {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 nav {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
 }
 
 nav h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2563eb; /* azul */
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: -0.025em;
+  transition: transform 0.2s;
+}
+
+nav h1:hover {
+  transform: scale(1.05);
 }
 
 nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
+  align-items: center;
 }
 
 nav ul li a {
-  color: #374151; /* gray-700 */
+  color: #374151;
   font-weight: 500;
-  transition: color 0.2s;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #2563eb;
 }
 
+nav ul li a:hover::after {
+  width: 100%;
+}
+
 nav a.button {
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.65rem 1.75rem;
   border-radius: 9999px;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.2s;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+nav a.button:hover::before {
+  left: 100%;
 }
 
 nav a.button:hover {
-  background-color: #1d4ed8;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
-/* Hero */
+/* ============================================
+   HERO SECTION - Impactante
+============================================ */
+/* Hero Section - Corrigido */
 #hero {
+  width: 100vw; /* ocupa toda a largura da tela */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 6rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  background: linear-gradient(to bottom, #eff6ff, #ffffff);
+  padding: 8rem 2rem 4rem;
+  margin: 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(5deg); }
+  66% { transform: translate(-20px, 20px) rotate(-5deg); }
 }
 
 #hero h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2563eb;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #hero p {
-  color: #4b5563; /* gray-600 */
-  font-size: 1.125rem;
-  max-width: 40rem;
-  margin-bottom: 1.5rem;
+  color: #4b5563;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
-#hero a {
-  background-color: #2563eb;
+#hero .cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+#hero a.primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-#hero a:hover {
-  background-color: #1d4ed8;
+#hero a.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
 }
 
-/* Sections comuns */
+#hero a.secondary {
+  background: white;
+  color: #2563eb;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: 2px solid #2563eb;
+  transition: all 0.3s;
+}
+
+#hero a.secondary:hover {
+  background: #eff6ff;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   SECTIONS - Espaçamento e Layout
+============================================ */
 section {
-  padding: 5rem 1.5rem;
+  width: 100%;
+  padding: 6rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+section.full-width {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 section h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2563eb;
-  margin-bottom: 1.5rem;
-  text-align: center; /* já estava centralizado, mas reforçado */
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 
-section p {
-  color: #4b5563;
-  margin-bottom: 2.5rem;
+section > p {
+  color: #6b7280;
+  font-size: 1.15rem;
+  margin-bottom: 3.5rem;
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  line-height: 1.8;
 }
 
+/* ============================================
+   GRID SYSTEM
+============================================ */
 .grid {
   display: grid;
   gap: 2rem;
+  margin-top: 3rem;
 }
 
 @media(min-width: 640px) {
@@ -161,37 +305,182 @@ section p {
   }
 }
 
-/* Modulos e Consultorias / Fluxos cards */
+/* ============================================
+   CARDS - Modernos com Glassmorphism
+============================================ */
 .card {
-  border: 1px solid #e5e7eb;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  transition: all 0.2s;
+  background: white;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-color: #eff6ff;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
 }
 
 .card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2563eb;
-  margin-top: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 
 .card p {
   color: #6b7280;
-  text-align: left; /* novo */
+  line-height: 1.7;
+  text-align: left;
+  font-size: 0.98rem;
 }
 
-/* Grupo i9 */
+/* ============================================
+   FLUXOS SECTION - Destaque
+============================================ */
+#fluxos {
+  background: white;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   CONSULTORIAS - Background Azul Gradiente
+============================================ */
+#consultorias {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  color: white;
+  border-radius: 2rem;
+  margin: 4rem auto;
+  padding: 6rem 3rem;
+}
+
+#consultorias h3 {
+  color: white;
+}
+
+#consultorias p {
+  color: #dbeafe;
+}
+
+#consultorias .card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+#consultorias .card h4 {
+  color: white;
+}
+
+#consultorias .card p {
+  color: #dbeafe;
+}
+
+#consultorias .card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   MÓDULOS - Cards Coloridos
+============================================ */
+#modulos .grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#modulos .module-card {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+#modulos .module-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.4);
+}
+
+#modulos .module-card.green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+#modulos .module-card.purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+#modulos .module-card.orange {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+#modulos .module-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#modulos .module-card h4 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   GRUPO i9 - Seção Especial
+============================================ */
 #grupo {
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
   text-align: center;
+  border-radius: 2rem;
+  padding: 5rem 2rem;
+  margin: 4rem auto;
 }
 
 #grupo h3 {
@@ -199,52 +488,143 @@ section p {
 }
 
 #grupo p {
-  color: #dbeafe;
+  color: #d1d5db;
+  font-size: 1.2rem;
 }
 
 #grupo a {
-  background-color: white;
-  color: #2563eb;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
+  background: white;
+  color: #111827;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 #grupo a:hover {
-  background-color: #dbeafe;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.3);
+  background: #f3f4f6;
 }
 
-/* Contato */
-#contato input, #contato textarea {
+/* ============================================
+   CONTATO - Formulário Moderno
+============================================ */
+#contato {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contato input,
+#contato textarea {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid #d1d5db;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 2px solid #e5e7eb;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: white;
+  margin-bottom: 1.25rem;
+}
+
+#contato input:focus,
+#contato textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 #contato textarea {
-  height: 8rem;
+  height: 10rem;
+  resize: vertical;
 }
 
 #contato button {
-  background-color: #2563eb;
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s;
 }
 
 #contato button:hover {
-  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+============================================ */
 footer {
-  background-color: #1e3a8a;
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
   color: #dbeafe;
   text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.875rem;
+  padding: 2.5rem 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+footer strong {
+  color: white;
+  font-weight: 700;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+============================================ */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  nav a.button {
+    font-size: 0.85rem;
+    padding: 0.55rem 1.25rem;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  #hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  #hero .cta-buttons {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* ============================================
+   UTILIDADES
+============================================ */
+.text-gradient {
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
 }
