@@ -8,7 +8,7 @@ const GrupoI9: React.FC = () => {
         O i9 Process integra o ecossistema de soluções empresariais do Grupo i9, 
         referência em inovação e tecnologia corporativa.
       </p>
-      <a href="https://grupo-i9.com.br" target="_blank" rel="noopener noreferrer">Visitar site do Grupo i9</a>
+      <a href="https://preview--i9process.lovable.app/" target="_blank" rel="noopener noreferrer">Visitar site do Grupo i9</a>
     </section>
   );
 };
