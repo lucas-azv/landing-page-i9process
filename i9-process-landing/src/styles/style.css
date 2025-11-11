@@ -7,7 +7,6 @@
    RESET E BASE
 ============================================ */
 * {
-  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -56,7 +55,7 @@ header {
 header.scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
 }
 
@@ -93,9 +92,9 @@ nav ul li a {
   color: #374151;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.2s;
   position: relative;
   padding: 0.5rem 0;
+  transition: all 0.2s;
 }
 
 nav ul li a::after {
@@ -167,7 +166,6 @@ nav a.button:hover {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
-  isolation: isolate;
   scroll-margin-top: var(--header-h);
 }
 
@@ -175,13 +173,8 @@ nav a.button:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 70% 20%,
-    rgba(37, 99, 235, 0.12) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
   z-index: 0;
-  pointer-events: none;
 }
 
 #hero > * {
@@ -190,18 +183,11 @@ nav a.button:hover {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  text-wrap: balance;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 #hero h2 {
@@ -210,10 +196,8 @@ nav a.button:hover {
   background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
   animation: fadeInUp 0.8s ease;
 }
 
@@ -234,19 +218,14 @@ nav a.button:hover {
 }
 
 #hero a {
-  width: 20%;
-  margin: auto;
-  display: inline-block;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 1.05rem;
-  text-align: center;
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 2rem;
   animation: fadeInUp 0.8s ease 0.4s backwards;
 }
 
@@ -260,16 +239,9 @@ nav a.button:hover {
 ============================================ */
 section {
   width: 100%;
-  padding: 6rem 2rem;
+  padding: 3.5rem 1.5rem;
   max-width: 1280px;
   margin: 0 auto;
-  position: relative;
-}
-
-section.full-width {
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 section h3 {
@@ -278,18 +250,14 @@ section h3 {
   color: #1e40af;
   margin-bottom: 1rem;
   text-align: center;
-  letter-spacing: -0.02em;
 }
 
 section > p {
   color: #6b7280;
   font-size: 1.15rem;
-  margin-bottom: 3.5rem;
+  margin: 0 auto 3.5rem;
   max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
-  line-height: 1.8;
 }
 
 /* ============================================
@@ -301,16 +269,12 @@ section > p {
   margin-top: 3rem;
 }
 
-@media(min-width: 640px) {
-  .sm-grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (min-width: 640px) {
+  .sm-grid-2 { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media(min-width: 768px) {
-  .md-grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (min-width: 768px) {
+  .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ============================================
@@ -379,7 +343,6 @@ section > p {
 .card p {
   color: #6b7280;
   line-height: 1.7;
-  text-align: left;
   font-size: 0.98rem;
 }
 
@@ -390,89 +353,135 @@ section > p {
   background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
   color: white;
   border-radius: 2rem;
-  /* margin: 4rem auto; */
-  padding: 6rem 3rem;
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
 #consultorias h3 {
-  color: white;
-  text-align: center;
+  color: #f8fafc;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
 }
 
-#consultorias p {
+#consultorias > p {
   color: #dbeafe;
-  text-align: center;
-  /* margin-bottom: 3rem; */
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
+/* Container principal */
 .consultorias-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.consultorias-cards {
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: 50%;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.card-consultoria {
+/* Linha de cada item (ícone + texto) */
+.consultoria-linha {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
-  transition: all 0.3s ease;
+  justify-content: center;
+  gap: 1.5rem; /* distância entre ícone e card */
 }
 
-.card-consultoria:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+
+/* Alterna o sentido dos pares */
+.consultoria-linha:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.card-consultoria .icone {
-  width: 28px;
-  height: 28px;
+/* Ícone com fundo */
+.icone-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-fundo {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  border-radius: 50%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.icone {
+  width: 32px;
+  height: 32px;
   filter: brightness(0) invert(1);
 }
 
-.card-consultoria h4 {
+/* Card de texto */
+.card-consultoria {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+  max-width: 900px; /* largura fixa */
+  width: auto;      /* não centraliza sozinho */
+}
+
+.card-consultoria:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Alinhamento do texto depende da posição */
+.consultoria-linha:nth-child(odd) .card-consultoria {
+  text-align: right;
+}
+
+.consultoria-linha:nth-child(even) .card-consultoria {
+  text-align: left;
+}
+
+/* Conteúdo do card */
+.card-conteudo {
+  text-align: left;
+}
+
+.card-conteudo h4 {
+  color: #f8fafc;
   font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  margin-bottom: 0.3rem;
 }
 
-.consultorias-imagem {
-  width: 50%;
+.card-conteudo p {
+  color: #e0e7ff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 500px;
 }
 
-.consultorias-imagem img {
-  width: 100%;
-  height: 320px; /* ajuste conforme desejar */
-  object-fit: cover; /* mantém o enquadramento sem distorcer */
-  border-radius: 16px;
+/* Intercalar layout (ícone direita nos pares) */
+.card-consultoria.reverse {
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
-  .consultorias-container {
-    flex-direction: column;
-    text-align: center;
+  .card-consultoria {
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
-  .consultorias-cards {
-    width: 100%;
-    align-items: center;
+  .card-consultoria.reverse {
+    flex-direction: column !important;
   }
 
-  .consultorias-imagem {
-    width: 100%;
+  .card-conteudo p {
+    max-width: 100%;
   }
 }
 
@@ -485,29 +494,14 @@ section > p {
   padding: 4rem 2rem;
 }
 
-/* Container fixo com grid para manter largura igual */
 #modulos .modulos-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colunas fixas */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   justify-items: center;
   margin-top: 2.5rem;
 }
 
-/* Responsivo — quebra em menos colunas */
-@media (max-width: 1000px) {
-  #modulos .modulos-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  #modulos .modulos-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Card */
 #modulos .module-card {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
@@ -517,7 +511,6 @@ section > p {
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
   transition: all 0.3s ease;
   cursor: pointer;
-  border: none;
   width: 100%;
   max-width: 240px;
 }
@@ -527,54 +520,46 @@ section > p {
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
 }
 
-#modulos .module-card h4 {
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 0.6rem;
-}
-
-/* Ícones */
 #modulos .module-card img {
   width: 40px;
   height: 40px;
   margin-bottom: 0.5rem;
 }
 
+#modulos .module-card h4 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 
 /* ============================================
-    GRUPO I9
+   GRUPO I9
 ============================================ */
 #grupo {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
   border-radius: 2rem;
-  padding: 5rem 2rem;
-  margin: 4rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1.5rem 2rem; /* antes: 5rem 2rem */
+  margin: 3rem auto; /* antes: 4rem auto */
 }
 
 .grupo-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
-  max-width: 1200px;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .grupo-texto {
-  flex: 0 0 60%;
+  flex: 1 1 50%;
   text-align: left;
 }
 
 .grupo-texto h3 {
+  text-align: left;
   color: #60a5fa;
-  font-size: 2rem;
   margin-bottom: 1rem;
-  text-align: left !important; 
 }
 
 .grupo-texto p {
@@ -582,8 +567,7 @@ section > p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   max-width: 85%;
-  /* CORREÇÃO DEFINITIVA: Força o parágrafo a alinhar à esquerda, anulando 'section > p' */
-  text-align: left !important; 
+  text-align: left;
 }
 
 .grupo-texto a {
@@ -607,101 +591,14 @@ section > p {
 }
 
 .grupo-imagem {
-  flex: 0 0 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1 1 30%;
 }
 
 .grupo-imagem img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 1.5rem;
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-  .grupo-content {
-    flex-direction: column;
-    /* Adicionado para garantir que os itens fiquem na esquerda */
-    align-items: flex-start;
-    padding: 0 1rem; 
-  }
-
-  .grupo-texto {
-    flex: unset;
-    text-align: left;
-    width: 100%;
-    padding: 0; /* Remove o padding extra aqui, já definido no .grupo-content */
-  }
-  
-  /* As regras com !important acima já devem garantir a correção, 
-     mas as mantemos aqui para especificidade: */
-  .grupo-texto h3 {
-    text-align: left !important; 
-  }
-  
-  .grupo-texto p {
-    text-align: left !important;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .grupo-imagem {
-    flex: unset;
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-
-  .grupo-imagem img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-/* Responsividade */
-@media (max-width: 900px) {
-  .grupo-content {
-    flex-direction: column;
-  }
-
-  .grupo-texto {
-    flex: unset;
-    /* text-align: left; - Mantemos aqui para elementos de texto inline/bloco */
-    text-align: left;
-    width: 100%; /* Garante que o bloco use toda a largura disponível */
-    padding: 0 1rem; /* Adiciona um pequeno padding nas laterais em telas pequenas, se necessário */
-  }
-  
-  /* FORÇA o TÍTULO a alinhar à esquerda, anulando o 'section h3' global */
-  .grupo-texto h3 {
-    text-align: left; 
-  }
-  
-  /* FORÇA o PARÁGRAFO a alinhar à esquerda e remove a margem 'auto' horizontal, se houver conflito */
-  .grupo-texto p {
-    text-align: left; 
-    max-width: 100%; /* Garante que o parágrafo use a largura total do .grupo-texto */
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* Garante que o BOTÃO continue sendo um elemento inline-flex e alinhado pela regra 'text-align: left' do pai */
-  .grupo-texto a {
-    /* Não precisa de alteração, ele herda o text-align: left do .grupo-texto */
-  }
-
-  .grupo-imagem {
-    flex: unset;
-    width: 100%;
-    margin-top: 1.5rem; /* Adiciona um espaço acima da imagem */
-  }
-
-  .grupo-imagem img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 /* ============================================
@@ -719,9 +616,9 @@ section > p {
   border-radius: 0.75rem;
   border: 2px solid #e5e7eb;
   font-size: 1rem;
-  transition: all 0.3s;
   background: white;
   margin-bottom: 1.25rem;
+  transition: all 0.3s;
 }
 
 #contato input:focus,
@@ -762,42 +659,15 @@ footer {
   background: linear-gradient(135deg, #1e3a8a, #1e40af);
   color: #dbeafe;
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 3rem 2rem;
   font-size: 0.95rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer strong {
-  color: white;
-  font-weight: 700;
+footer a {
+  color: #93c5fd;
+  font-weight: 500;
 }
 
-/* ============================================
-   RESPONSIVIDADE
-============================================ */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-  }
-
-  nav a.button {
-    font-size: 0.85rem;
-    padding: 0.55rem 1.25rem;
-  }
-
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  #hero {
-    padding: 6rem 1.5rem 3rem;
-  }
-
-  #hero .cta-buttons {
-    flex-direction: column;
-  }
-
-  .card {
-    padding: 1.5rem;
-  }
+footer a:hover {
+  text-decoration: underline;
 }
