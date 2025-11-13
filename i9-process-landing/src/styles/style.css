@@ -582,14 +582,15 @@ section > p {
   z-index: 0;
 }
 
-/* Ícone centralizado */
 .modulo-top img {
   width: 64px;
   height: 64px;
   position: relative;
   z-index: 1;
   object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)); /* sombra elegante e visível */
 }
+
 
 /* ===== PARTE INFERIOR ===== */
 .modulo-bottom {
@@ -634,7 +635,7 @@ section > p {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
   border-radius: 2rem;
-  padding: 3rem 2rem;
+  padding: 1.2rem 1.5rem;
   margin: 4rem auto;
 }
 
