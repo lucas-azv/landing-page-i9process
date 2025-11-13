@@ -699,6 +699,10 @@ section > p {
 /* ===================== */
 /* Mobile: esconder imagem e centralizar conteúdo */
 @media (max-width: 768px) {
+  #grupo{
+    padding: 3rem 4rem;
+  }
+
   .grupo-content {
     flex-direction: column;
     align-items: center;
