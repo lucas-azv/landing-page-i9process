@@ -635,7 +635,7 @@ section > p {
   background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
   color: white;
   border-radius: 2rem;
-  padding: 1.2rem 1.5rem;
+  padding: 1.5rem 1.8rem;
   margin: 4rem auto;
 }
 
@@ -648,7 +648,7 @@ section > p {
 }
 
 .grupo-texto {
-  flex: 1 1 50%;
+  flex: 1 1 40%;
 }
 
 .grupo-texto h3 {
@@ -686,7 +686,7 @@ section > p {
 }
 
 .grupo-imagem {
-  flex: 1 1 30%;
+  flex: 1 1 40%;
 }
 
 .grupo-imagem img {
