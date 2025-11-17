@@ -79,6 +79,7 @@ nav h1 {
 
 nav h1:hover {
   transform: scale(1.05);
+  cursor: default;
 }
 
 nav ul {
@@ -345,6 +346,7 @@ section > p {
   box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15);
   border-color: rgba(37, 99, 235, 0.3);
   background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  cursor: default;
 }
 
 .card-icon {
@@ -464,6 +466,7 @@ section > p {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.25);
   transform: translateY(-3px);
+  cursor: default;
 }
 
 /* Alinhamento do texto depende da posição */
@@ -558,6 +561,7 @@ section > p {
 .module-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  cursor: default;
 }
 
 /* ===== PARTE SUPERIOR ===== */
