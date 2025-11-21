@@ -778,6 +778,22 @@ section > p {
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s ease-out forwards;
+}
+
+
 /* ============================================
    FOOTER
 ============================================ */
